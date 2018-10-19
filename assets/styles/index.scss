@@ -1,1 +1,64 @@
 @import '~bootstrap/scss/bootstrap';
+
+
+// $background-color: #919ade;
+$background-color: #4dc3ff; // Maya Blue
+$font-color: #81ee77;
+$white: #fff;
+$grey: rgb(128, 128, 128);
+$teal: rgb(0, 156, 161);
+$black: #000;
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  display: flex;
+}
+
+.box {
+  align-items: center;
+  border: 1px solid $white;
+  color: $font-color;
+  display: flex;
+  font-family: fantasy;
+  font-size: 50px;
+  height: 80px;
+  justify-content: center;
+}
+
+.grey {
+  background-color: $grey;
+}
+
+.teal {
+  background-color: $teal;
+}
+
+.hidden {
+  display: none;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.bg {
+  // The image used
+  background-image: url('images/arch-sign-ogden-utah-800x533.jpg');
+
+  // Center and scale the image nicely
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // Full height
+  height: 100%;
+}
