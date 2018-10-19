@@ -1,6 +1,6 @@
-# ID=2 sh curl-scripts/sign-out.sh
+#!/bin/bash
 
-curl "https://tic-tac-toe-wdi.herokuapp.com/sign-out" \
+curl "https://bike-rental-server.herokuapp.com/bikes/${ID}" \
   --include \
   --request DELETE \
   --header "Authorization: Token token=${TOKEN}"

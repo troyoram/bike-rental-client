@@ -1,13 +1,14 @@
-# sh curl-scripts/json/sign-in.sh
+#!/bin/bash
 
-curl "https://tic-tac-toe-wdi.herokuapp.com/sign-in" \
+curl "http://localhost:4741/sign-up" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
       "email": "'"${EMAIL}"'",
-      "password": "'"${PASSWORD}"'"
+      "password": "'"${PASSWORD}"'",
+      "password_confirmation": "'"${PASSWORD}"'"
     }
   }'
 
