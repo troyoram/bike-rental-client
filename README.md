@@ -1,4 +1,6 @@
-# Full Stack Project Practice
+# Full Stack Project
+
+[Requirements](https://git.generalassemb.ly/ga-wdi-boston/full-stack-project/)
 
 Be prepared to discuss these items with a consultant during a 1 on 1.
 
