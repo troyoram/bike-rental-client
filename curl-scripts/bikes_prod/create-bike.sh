@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "https://bike-rental-server.herokuapp.com1/bikes" \
+curl "https://bike-rental-server.herokuapp.com/bikes" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
