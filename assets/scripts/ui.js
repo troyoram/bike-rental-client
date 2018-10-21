@@ -5,17 +5,44 @@ const gameLogic = require('./game-logic.js')
 // const events = require('./events.js')
 
 const indexBikesSuccess = function (data) {
-  store.game = data.game
-  // reset html board
-  $('.box').html('')
-  // reset game message
-  $('#game-message').html('')
-  // reset game stats messages
-  $('.game-stat-msg').html('')
-  // reset cell background color
-  $('.box').css('background-color', 'grey')
-  // unhide tic-tac-toe board
-  $('#game-board').removeClass('hidden')
+  store.bikes = data.bikes
+  console.log(data)
+  console.log(store)
+  console.log(store.bikes)
+
+  // $('#display-all-bikes-message').html('List of bikes = ' + store.bikes[1].style)
+  let newHTML = ''
+  newHTML += '<div class="row">'
+  newHTML += '<div class="col box grey">Style</div>'
+  newHTML += '<div class="col box grey">Size</div>'
+  newHTML += '<div class="col box grey">User</div>'
+  newHTML += '</div>'
+  // store.forEach(function (bike) {
+  for (let i = 0; i < store.bikes.length; i++) {
+    console.log(store.bikes[i].id)
+    console.log(store.bikes[i].style)
+    console.log(store.bikes[i].size)
+    console.log(store.bikes[i].user_id)
+    // $('#display-all-bikes-message').append('<div class="col box grey"><ul><h4> Style: ' + store.bikes[i].style + ', Size ' + store.bikes[i].size + ', from user ' + store.bikes[i].user_id + '</h4></ul></div>')
+    newHTML += '<div class="row">'
+    newHTML += '<div class="col box grey"><ul><h4>' + store.bikes[i].style + '</h4></ul></div>'
+    newHTML += '<div class="col box grey"><ul><h4>' + store.bikes[i].size + '</h4></ul></div>'
+    newHTML += '<div class="col box grey"><ul><h4>' + store.bikes[i].user_id + '</h4></ul></div>'
+    newHTML += '</div>'
+  }
+  $('#display-all-bikes-message').html(newHTML)
+  // $('#display-all-bikes-message').css('color', 'red')
+
+  // // reset html board
+  // $('.box').html('')
+  // // reset game message
+  // $('#game-message').html('')
+  // // reset game stats messages
+  // $('.game-stat-msg').html('')
+  // // reset cell background color
+  // $('.box').css('background-color', 'grey')
+  // // unhide tic-tac-toe board
+  // $('#game-board').removeClass('hidden')
 }
 
 const updateGameSuccess = function (data) {

@@ -5,8 +5,8 @@ const store = require('./store.js')
 
 const indexBikes = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'POST',
+    url: config.apiUrl + '/bikes',
+    method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },

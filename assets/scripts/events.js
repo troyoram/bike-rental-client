@@ -12,6 +12,21 @@ const playerX = 'X'
 const playerO = 'O'
 let currentPlayer = playerX
 
+const onindexBikes = function (event) {
+  // prevent auto-page refresh
+  event.preventDefault()
+  // reset js board
+  grid = ['', '', '', '', '', '', '', '', '']
+  // reset starting player to X
+  currentPlayer = playerX
+
+  const data = getFormFields(event.target)
+
+  api.indexBikes(data)
+    .then(ui.indexBikesSuccess)
+    .catch(ui.indexBikesFailure)
+}
+
 const onSelectCell = function (event) {
   // prevent auto-page refresh
   event.preventDefault()
@@ -66,21 +81,6 @@ const onSelectCell = function (event) {
   api.updateGame(data)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
-}
-
-const onindexBikes = function (event) {
-  // prevent auto-page refresh
-  event.preventDefault()
-  // reset js board
-  grid = ['', '', '', '', '', '', '', '', '']
-  // reset starting player to X
-  currentPlayer = playerX
-
-  const data = getFormFields(event.target)
-
-  api.indexBikes(data)
-    .then(ui.indexBikesSuccess)
-    .catch(ui.indexBikesFailure)
 }
 
 const onGameStats = function (event) {
