@@ -99,6 +99,48 @@ const createBikeFailure = function (data) {
   $('#display-all-bikes-message').css('color', 'red')
 }
 
+const updateBikeSuccess = function (data) {
+  store.bike = data.bike
+  console.log('updateBikeSuccess called')
+  console.log(data)
+  console.log(store)
+  console.log(store.bike)
+
+  // // TODO: Add code to call showBikeSuccess with updated bike id
+
+  // indexBikesSuccess(data)
+}
+
+const updateBikeFailure = function (data) {
+  store.bikes = data.bikes
+  // console.log(`api showBikeFailure data.bike.id is = ${data.bike.id}`)
+  // $('#display-all-bikes-message').html(newHTML)
+  $('#display-all-bikes-message').html('Unable to update bike')
+  $('#display-all-bikes-message').css('color', 'red')
+}
+
+const deleteBikeSuccess = function (data) {
+  // store.bike = data.bike
+  console.log('deleteBikeSuccess called')
+  console.log(data)
+  console.log(store)
+  console.log(store.bike)
+
+  // // TODO: Add code to call showBikeSuccess with deleted bike id
+  $('#display-all-bikes-message').html('Bike has been deleted')
+  $('#display-all-bikes-message').css('color', 'green')
+
+  // indexBikesSuccess(data)
+}
+
+const deleteBikeFailure = function (data) {
+  store.bikes = data.bikes
+  // console.log(`api showBikeFailure data.bike.id is = ${data.bike.id}`)
+  // $('#display-all-bikes-message').html(newHTML)
+  $('#display-all-bikes-message').html('Unable to delete bike')
+  $('#display-all-bikes-message').css('color', 'red')
+}
+
 const failure = (error) => {
   console.log('ui failure() called')
   console.error(error)
@@ -165,6 +207,10 @@ module.exports = {
   showBikeFailure,
   createBikeSuccess,
   createBikeFailure,
+  updateBikeSuccess,
+  updateBikeFailure,
+  deleteBikeSuccess,
+  deleteBikeFailure,
   failure,
   updateGameSuccess,
   updateGameFailure,

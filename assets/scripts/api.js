@@ -48,6 +48,47 @@ const createBike = function (data) {
   })
 }
 
+const updateBike = function (data) {
+  // console.log(`api createBike store.bikes.style is = ${store.bike.style}`)
+  // console.log(`api createBike store.bikes.size is = ${store.bike.size}`)
+  // console.log(`api createBike store.user.token is = ${store.user.token}`)
+  console.log(`api updateBike data.bikes.id is = ${data.bike.id}`)
+  console.log(`api updateBike data.bikes.style is = ${data.bike.style}`)
+  console.log(`api updateBike data.bikes.size is = ${data.bike.size}`)
+  console.log(`api updateBike data.user.token is = ${store.user.token}`)
+  return $.ajax({
+    url: config.apiUrl + `/bikes/${data.bike.id}`,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data: {
+      bike: {
+        style: data.bike.style,
+        size: data.bike.size
+      }
+    }
+  })
+}
+
+const deleteBike = function (data) {
+  // console.log(`api createBike store.bikes.style is = ${store.bike.style}`)
+  // console.log(`api createBike store.bikes.size is = ${store.bike.size}`)
+  // console.log(`api createBike store.user.token is = ${store.user.token}`)
+  console.log(`api deleteBike data.bikes.id is = ${data.bike.id}`)
+  // console.log(`api deleteBike data.bikes.style is = ${data.bike.style}`)
+  // console.log(`api deleteBike data.bikes.size is = ${data.bike.size}`)
+  console.log(`api deleteBike data.user.token is = ${store.user.token}`)
+  return $.ajax({
+    url: config.apiUrl + `/bikes/${data.bike.id}`,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data
+  })
+}
+
 const showGame = function (data) {
   return $.ajax({
     url: config.apiUrl + `/games/${store.game.id}`,
@@ -93,6 +134,8 @@ module.exports = {
   indexBikes,
   showBike,
   createBike,
+  updateBike,
+  deleteBike,
   showGame,
   updateGame,
   indexGame

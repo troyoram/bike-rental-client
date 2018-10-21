@@ -18,5 +18,7 @@ $(() => {
   $('#indexBikes').on('click', appEvents.onIndexBikes)
   $('#show-bike-form').on('submit', appEvents.onShowBike)
   $('#create-bike-form').on('submit', appEvents.onCreateBike)
+  $('#update-bike-form').on('submit', appEvents.onUpdateBike)
+  $('#delete-bike-form').on('submit', appEvents.onDeleteBike)
   $('#gameStats').on('click', appEvents.onGameStats)
 })

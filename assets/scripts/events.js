@@ -62,6 +62,52 @@ const onCreateBike = function (event) {
     .catch(ui.createBikeFailure)
 }
 
+const onUpdateBike = function (event) {
+  // prevent auto-page refresh
+  event.preventDefault()
+
+  const data = getFormFields(event.target)
+  console.log(`events onUpdateBike data is = ${data}`)
+  console.log(`events onUpdateBike data.bike.id is = ${data.bike.id}`)
+  console.log(`events onUpdateBike data.bike.style is = ${data.bike.style}`)
+  console.log(`events onUpdateBike data.bike.size is = ${data.bike.size}`)
+  // console.log(`events onCreateBike store.bikes.style is = ${store.bikes.style}`)
+  // console.log(`events onCreateBike store.bikes.size is = ${store.bikes.size}`)
+  //
+  // store.bike.style = data.bike.style
+  // store.bike.size = data.bike.size
+
+  // const bikeId = $(event.target).closest('section').data('id')
+
+  api.updateBike(data)
+    .then(ui.updateBikeSuccess)
+    .catch(ui.updateBikeFailure)
+}
+
+const onDeleteBike = function (event) {
+  // prevent auto-page refresh
+  event.preventDefault()
+
+  const data = getFormFields(event.target)
+  console.log(`events onDeleteBike data is = ${data}`)
+  console.log(`events onDeleteBike data.bike.id is = ${data.bike.id}`)
+  // console.log(`events onDeleteBike data.bike.style is = ${data.bike.style}`)
+  // console.log(`events onDeleteBike data.bike.size is = ${data.bike.size}`)
+  // console.log(`events onCreateBike store.bikes.style is = ${store.bikes.style}`)
+  // console.log(`events onCreateBike store.bikes.size is = ${store.bikes.size}`)
+  //
+  // store.bike.style = data.bike.style
+  // store.bike.size = data.bike.size
+
+  // const bikeId = $(event.target).closest('section').data('id')
+
+  if (confirm('Are you sure you want to delete this bike?')) {
+    api.deleteBike(data)
+      .then(ui.deleteBikeSuccess)
+      .catch(ui.deleteBikeFailure)
+  }
+}
+
 const onSelectCell = function (event) {
   // prevent auto-page refresh
   event.preventDefault()
@@ -132,6 +178,8 @@ module.exports = {
   onIndexBikes,
   onShowBike,
   onCreateBike,
+  onUpdateBike,
+  onDeleteBike,
   onSelectCell,
   onGameStats
 }
