@@ -12,7 +12,7 @@ const playerX = 'X'
 const playerO = 'O'
 let currentPlayer = playerX
 
-const onindexBikes = function (event) {
+const onIndexBikes = function (event) {
   // prevent auto-page refresh
   event.preventDefault()
   // reset js board
@@ -25,6 +25,41 @@ const onindexBikes = function (event) {
   api.indexBikes(data)
     .then(ui.indexBikesSuccess)
     .catch(ui.indexBikesFailure)
+}
+
+const onShowBike = function (event) {
+  // prevent auto-page refresh
+  event.preventDefault()
+
+  const data = getFormFields(event.target)
+  console.log(`events onShowBike data is = ${data}`)
+
+  // const bikeId = $(event.target).closest('section').data('id')
+
+  api.showBike(data)
+    .then(ui.showBikeSuccess)
+    .catch(ui.showBikeFailure)
+}
+
+const onCreateBike = function (event) {
+  // prevent auto-page refresh
+  event.preventDefault()
+
+  const data = getFormFields(event.target)
+  console.log(`events onCreateBike data is = ${data}`)
+  console.log(`events onCreateBike data.bike.style is = ${data.bike.style}`)
+  console.log(`events onCreateBike data.bike.size is = ${data.bike.size}`)
+  // console.log(`events onCreateBike store.bikes.style is = ${store.bikes.style}`)
+  // console.log(`events onCreateBike store.bikes.size is = ${store.bikes.size}`)
+  //
+  // store.bike.style = data.bike.style
+  // store.bike.size = data.bike.size
+
+  // const bikeId = $(event.target).closest('section').data('id')
+
+  api.createBike(data)
+    .then(ui.createBikeSuccess)
+    .catch(ui.createBikeFailure)
 }
 
 const onSelectCell = function (event) {
@@ -94,7 +129,9 @@ const onGameStats = function (event) {
 }
 
 module.exports = {
+  onIndexBikes,
+  onShowBike,
+  onCreateBike,
   onSelectCell,
-  onindexBikes,
   onGameStats
 }

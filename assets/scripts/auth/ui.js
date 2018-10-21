@@ -16,7 +16,8 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#display-message').html('Signed In As: ' + store.user.email)
+  // console.log(store.user)
+  $('#display-message').html('Signed In As: ' + store.user.email + ', User ID: ' + store.user.id)
   $('#display-message').css('color', 'green')
   $('#sign-in-form').trigger('reset')
   $('#sign-up-form').addClass('hidden')

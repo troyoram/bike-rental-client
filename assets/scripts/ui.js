@@ -6,43 +6,102 @@ const gameLogic = require('./game-logic.js')
 
 const indexBikesSuccess = function (data) {
   store.bikes = data.bikes
-  console.log(data)
-  console.log(store)
-  console.log(store.bikes)
+  // console.log(data)
+  // console.log(store)
+  // console.log(store.bikes)
 
-  // $('#display-all-bikes-message').html('List of bikes = ' + store.bikes[1].style)
   let newHTML = ''
   newHTML += '<div class="row">'
+  newHTML += '<div class="col box grey">Bike ID</div>'
   newHTML += '<div class="col box grey">Style</div>'
   newHTML += '<div class="col box grey">Size</div>'
-  newHTML += '<div class="col box grey">User</div>'
+  newHTML += '<div class="col box grey">User ID</div>'
   newHTML += '</div>'
   // store.forEach(function (bike) {
   for (let i = 0; i < store.bikes.length; i++) {
-    console.log(store.bikes[i].id)
-    console.log(store.bikes[i].style)
-    console.log(store.bikes[i].size)
-    console.log(store.bikes[i].user_id)
+    // console.log(store.bikes[i].id)
+    // console.log(store.bikes[i].id)
+    // console.log(store.bikes[i].style)
+    // console.log(store.bikes[i].size)
+    // console.log(store.bikes[i].user_id)
     // $('#display-all-bikes-message').append('<div class="col box grey"><ul><h4> Style: ' + store.bikes[i].style + ', Size ' + store.bikes[i].size + ', from user ' + store.bikes[i].user_id + '</h4></ul></div>')
     newHTML += '<div class="row">'
+    newHTML += '<div class="col box grey"><ul><h4>' + store.bikes[i].id + '</h4></ul></div>'
     newHTML += '<div class="col box grey"><ul><h4>' + store.bikes[i].style + '</h4></ul></div>'
     newHTML += '<div class="col box grey"><ul><h4>' + store.bikes[i].size + '</h4></ul></div>'
     newHTML += '<div class="col box grey"><ul><h4>' + store.bikes[i].user_id + '</h4></ul></div>'
     newHTML += '</div>'
   }
   $('#display-all-bikes-message').html(newHTML)
-  // $('#display-all-bikes-message').css('color', 'red')
+}
 
-  // // reset html board
-  // $('.box').html('')
-  // // reset game message
-  // $('#game-message').html('')
-  // // reset game stats messages
-  // $('.game-stat-msg').html('')
-  // // reset cell background color
-  // $('.box').css('background-color', 'grey')
-  // // unhide tic-tac-toe board
-  // $('#game-board').removeClass('hidden')
+const indexBikesFailure = function (data) {
+  store.bikes = data.bikes
+  // console.log(`api showBikeFailure data.bike.id is = ${data.bike.id}`)
+  // $('#display-all-bikes-message').html(newHTML)
+  $('#display-all-bikes-message').html('Unable to list all bikes')
+  $('#display-all-bikes-message').css('color', 'red')
+}
+
+const showBikeSuccess = function (data) {
+  store.bikes = data.bikes
+  // console.log(data)
+  // console.log(store)
+  // console.log(store.bikes)
+
+  console.log(`showBikeSuccess data.bike.id is = ${data.bike.id}`)
+  console.log(`showBikeSuccess data.bike.style is = ${data.bike.style}`)
+  console.log(`showBikeSuccess data.bike.size is = ${data.bike.size}`)
+  console.log(`showBikeSuccess data.bike.user_id is = ${data.bike.user_id}`)
+
+  let newHTML = ''
+  newHTML += '<div class="row">'
+  newHTML += '<div class="col box grey">Bike ID</div>'
+  newHTML += '<div class="col box grey">Style</div>'
+  newHTML += '<div class="col box grey">Size</div>'
+  newHTML += '<div class="col box grey">User ID</div>'
+  newHTML += '</div>'
+  newHTML += '<div class="row">'
+  newHTML += '<div class="col box grey"><ul><h4>' + data.bike.id + '</h4></ul></div>'
+  newHTML += '<div class="col box grey"><ul><h4>' + data.bike.style + '</h4></ul></div>'
+  newHTML += '<div class="col box grey"><ul><h4>' + data.bike.size + '</h4></ul></div>'
+  newHTML += '<div class="col box grey"><ul><h4>' + data.bike.user_id + '</h4></ul></div>'
+  newHTML += '</div>'
+
+  $('#display-all-bikes-message').html(newHTML)
+}
+
+const showBikeFailure = function (data) {
+  store.bikes = data.bikes
+  // console.log(`api showBikeFailure data.bike.id is = ${data.bike.id}`)
+  // $('#display-all-bikes-message').html(newHTML)
+  $('#display-all-bikes-message').html('Bike ID not found')
+  $('#display-all-bikes-message').css('color', 'red')
+}
+
+const createBikeSuccess = function (data) {
+  store.bike = data.bike
+  console.log('createBikeSuccess called')
+  console.log(data)
+  console.log(store)
+  console.log(store.bike)
+
+  // // TODO: Add code to call showBikeSuccess with new bike id
+
+  // indexBikesSuccess(data)
+}
+
+const createBikeFailure = function (data) {
+  store.bikes = data.bikes
+  // console.log(`api showBikeFailure data.bike.id is = ${data.bike.id}`)
+  // $('#display-all-bikes-message').html(newHTML)
+  $('#display-all-bikes-message').html('Unable to create new bike')
+  $('#display-all-bikes-message').css('color', 'red')
+}
+
+const failure = (error) => {
+  console.log('ui failure() called')
+  console.error(error)
 }
 
 const updateGameSuccess = function (data) {
@@ -96,15 +155,17 @@ const gameStatsSuccess = function (data) {
 // // TODO: complete updateGameFailure
 const updateGameFailure = function (data) {}
 
-// // TODO: complete indexBikesFailure
-const indexBikesFailure = function (data) {}
-
 // // TODO: complete gameStatsFailure
 const gameStatsFailure = function (data) {}
 
 module.exports = {
   indexBikesSuccess,
   indexBikesFailure,
+  showBikeSuccess,
+  showBikeFailure,
+  createBikeSuccess,
+  createBikeFailure,
+  failure,
   updateGameSuccess,
   updateGameFailure,
   gameStatsSuccess,

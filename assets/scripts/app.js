@@ -15,6 +15,8 @@ $(() => {
   $('#sign-out-form').on('click', authEvents.onSignOut)
 
   // $('.col').on('click', appEvents.onSelectCell)
-  $('#indexBikes').on('click', appEvents.onindexBikes)
+  $('#indexBikes').on('click', appEvents.onIndexBikes)
+  $('#show-bike-form').on('submit', appEvents.onShowBike)
+  $('#create-bike-form').on('submit', appEvents.onCreateBike)
   $('#gameStats').on('click', appEvents.onGameStats)
 })
