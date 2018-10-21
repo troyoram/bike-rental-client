@@ -11,7 +11,7 @@ const signUpSuccess = function () {
 const signUpFailure = function () {
   $('#display-message').html('Sign Up Failure, please try again')
   $('#display-message').css('color', 'red')
-  $('#sign-in-form').trigger('reset')
+  $('#sign-up-form').trigger('reset')
 }
 
 const signInSuccess = function (response) {

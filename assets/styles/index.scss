@@ -52,9 +52,9 @@ html {
 
 .bg {
   // The image used
-  background-image: url('images/arch.jpg');
+  background-image: url('/images/arch.jpg');
 
-  // Center and scale the image nicely
+  // Center and scale the image
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
