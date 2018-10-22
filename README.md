@@ -1,82 +1,83 @@
-# Full Stack Project
+# Bike Rental Application - Full Stack Project
 
-[Requirements](https://git.generalassemb.ly/ga-wdi-boston/full-stack-project/)
+The Ben Lomond Bike Rental appliction is the second project assigned to students
+in General Assembly's Web Development Immersive (WDI) Course.  The student is
+tasked with building a Single Page Application (SPA).  Users will be required
+to authenticate through sign-up, sign-in, change-password, and sign-out using
+a custom API.  Once signed in, users can create, read, update, and delete bikes
+in a SQL database for others to potentially rent.
 
-Be prepared to discuss these items with a consultant during a 1 on 1.
+[Requirements](https://git.generalassemb.ly/ga-wdi-boston/full-stack-project/blob/master/requirements.md)
 
-You may use GitHub, PowerPoint, Keynote, or any other tools you desire to
-complete any part of this.
+[Bike Rental Client - Repo](https://github.com/troyoram/bike-rental-client)
 
-## Project Idea
+[Bike Rental Client - Deployed](https://troyoram.github.io/bike-rental-client/)
 
-What is your project idea?  How did you come up with it? Why? Who would use it?
+[Bike Rental Server - Repo](https://github.com/troyoram/bike-rental-server)
 
-```md
-I would like to create a bike rental app.  A user can choose a rental from
-a list of bikes.  The bikes table will contain different bikes with characteristics
-like size, style, make, model, etc.
+[Bike Bike Rental Server - Deployed](https://bike-rental-server.herokuapp.com/bikes)
 
-If time permits, I would like to have a list of Local-Bike-Shops (lbs) where a
-bike in the bike list can be found for rental.
-```
+## Description
 
-## Write between 3-5 user stories
+Although there are many companies that rent their own bikes, I would like to
+create an appliction where any individual or Local Bike Shop (LBS) can post
+bikes for rent all located in one repository.
 
-We have gone over this before. Please refer to your notes, previous repos or the
-google machine if you need further assistance.
+The Bike Rental Client provides the user interface where new users can sign up
+and existing users can sign-in, change-password, and sign-out.  Signed in users
+can use buttons and forms to view bikes from all users or create, update, and
+delete therr own bikes.  The Bike Rental Client is deployed using Git Hub Pages.
 
-```md
-1. As a user, I want to create an account, so that I can rent bikes.
-2. As a user, I want to view all bikes for rent, so that I can pick from available choices.
-3. As a user, I want to add a bike, so that I can rent a bike.
+The Bike Rental Server is the back-end API that responds to, and processes,
+requests from the client.  The Bike Rental Server is deployed on heroku.
+
+## User Stories
+
+1. As a user, I want to create an account, so that I can list bikes for rent.
+2. As a user, I want to view all bikes for rent, so that I can view available choices.
+3. As a user, I want to add a bike, so that I can post a bike for rent.
 4. As a user, I want to update a bike, so that options can be changed.
-5. As a user, I want to delete a bike, so that it is no longer rented.
-6. As a user, I want to view only my bikes, so that I know what I've rented.
-```
+5. As a user, I want to delete a bike, so that it can no longer rented.
+6. As a user, I want to view my bikes, so that I know what I've posted for rent.
 
-## Plan your tables and columns
+## Tables and Columns
 
-What tables will you need? What will the columns on the table be?
+users: user_id, email, password
 
-```md
-users: user_id, email, password, bike_id
-bikes: bike_id, style, size, make, model
-lbs: bike_id, quantity
-```
+bikes: bike_id, style, size, user_id
 
-## Create an ERD (entity relationship diagram)
-
-These are the diagrams that show how your tables are related to one another
-(one to many, many to many, etc).
-
-Include an image (or a link to image) below.
+## Entity Relationship Diagram (ERD)
 
 ![Entity Relationship Diagram](images/wdi_proj2_erd.png)
 
 ## Routing
 
-What routes will you need to make the proper request to your API?
-
-```md
 resources :bikes, except: %i[new edit]
+
 OR
+
 get '/bikes' => 'bikes#index'
+
 post '/bikes' => 'bikes#create'
+
 patch '/bikes/:id' => 'bikes#update'
+
 get '/bikes/:id' => 'bikes#show'
-```
+
+delete '/bikes/:id' => 'bikes#delete'
 
 ## Wireframes
 
-Please create a wireframe of your planned front end.
-
 ![Wireframe](images/wdi_proj2_wireframe.png)
 
-## Timetable
+## Technologies Used
 
-Write a basic timetable for yourself, you don't have to stick to it but it
-helps to go in with a plan.
+1. Browser: Google Chrome with DevTools
+1. Editor: Atom
+1. Client-side tools: HTML, CSS, Javascript, , bootstrap, Node Package Manager
+1. Server-side tools: Ruby, Rails
 
+## Schedule
 
 ### October 17, 2018
 ### Planning
@@ -130,3 +131,50 @@ Client
 1.  [ ] README
 2.  [ ] Troubleshoot/Debug
 3.  [ ] Style
+
+## Problem Resolution
+
+As problems with design and development were encountered, a new issued was created
+and addressed through General Assembly's Full-Stack Project [Issue Queue](https://git.generalassemb.ly/ga-wdi-boston/full-stack-project/issues)
+
+## Unsolved problems to be fixed in future releases
+
+1. If time permits, I would like to add a feature where a potential bike renter can input a desired bike style and size and have the application return matching bikes and owner contact information
+
+## Testing
+
+There were no requirements for developing automated tests for this project.  As
+a result, no automated tests exist for the Full-Stack project.
+
+### Coding style tests
+
+Linter for Atom was used to enforce coding style
+
+## Deployment
+
+'grunt deploy' was used to deploy to github pages
+
+## Built With
+
+Ruby on Rails framework was used for the server-side of this project. No
+dependency management or RSS feeds were used for this project
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/troyoram/bike-rental-client/blob/master/CONTRIBUTING.md) for details on the process for submitting pull requests.
+
+## Versioning
+
+'git commit' and 'git push' were used for versioning. For the versions available,
+see the repo links above.
+
+## Authors
+
+* **Troy Oram** - *Initial work*
+
+## License
+
+This project is licensed is licensed under a CC-BY-NC-SA 4.0 license - see the [LICENSE.md](https://github.com/troyoram/bike-rental-client/blob/master/LICENSE) file for details
+
+## Acknowledgments
+N/A
