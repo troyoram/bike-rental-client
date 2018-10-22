@@ -31,11 +31,7 @@ const indexBikesFailure = function (data) {
 }
 
 const showBikeSuccess = function (data) {
-  store.bikes = data.bikes
-  // console.log(`showBikeSuccess data.bike.id is = ${data.bike.id}`)
-  // console.log(`showBikeSuccess data.bike.style is = ${data.bike.style}`)
-  // console.log(`showBikeSuccess data.bike.size is = ${data.bike.size}`)
-  // console.log(`showBikeSuccess data.bike.user_id is = ${data.bike.user_id}`)
+  store.bike = data.bike
 
   let newHTML = ''
   newHTML += '<div class="row">'
@@ -52,67 +48,59 @@ const showBikeSuccess = function (data) {
   newHTML += '</div>'
 
   $('#display-all-bikes-message').html(newHTML)
+  $('#show-bike-form').trigger('reset')
 }
 
 const showBikeFailure = function (data) {
-  store.bikes = data.bikes
+  store.bike = data.bike
   $('#display-all-bikes-message').html('Bike ID not found')
   $('#display-all-bikes-message').css('color', 'red')
+  $('#show-bike-form').trigger('reset')
 }
 
 const createBikeSuccess = function (data) {
   store.bike = data.bike
-  // console.log('createBikeSuccess called')
-  // console.log(data)
-  // console.log(store)
-  // console.log(store.bike)
-
-  // // TODO: Add code to call showBikeSuccess with new bike id
-
-  // indexBikesSuccess(data)
+  $('#create-bike-form').trigger('reset')
+  showBikeSuccess(data)
 }
 
 const createBikeFailure = function (data) {
-  store.bikes = data.bikes
+  store.bike = data.bike
   $('#display-all-bikes-message').html('Unable to create new bike')
   $('#display-all-bikes-message').css('color', 'red')
+  $('#create-bike-form').trigger('reset')
 }
 
 const updateBikeSuccess = function (data) {
   store.bike = data.bike
-  // console.log('updateBikeSuccess called')
-  // console.log(data)
-  // console.log(store)
-  // console.log(store.bike)
-
-  // // TODO: Add code to call showBikeSuccess with updated bike id
-
-  // indexBikesSuccess(data)
+  $('#display-update-bike-message').html('Bike updated')
+  $('#display-update-bike-message').css('color', 'green')
+  $('#update-bike-form').trigger('reset')
+  showBikeSuccess(data)
 }
 
 const updateBikeFailure = function (data) {
-  store.bikes = data.bikes
+  store.bike = data.bike
   $('#display-all-bikes-message').html('Unable to update bike')
   $('#display-all-bikes-message').css('color', 'red')
+  $('#update-bike-form').trigger('reset')
 }
 
 const deleteBikeSuccess = function (data) {
-  // console.log('deleteBikeSuccess called')
-  // console.log(data)
-  // console.log(store)
-  // console.log(store.bike)
-
-  // // TODO: Add code to call showBikeSuccess with deleted bike id
-  $('#display-all-bikes-message').html('Bike has been deleted')
+  // $('#display-delete-bike-message').html('Bike deleted')
+  // $('#display-delete-bike-message').css('color', 'green')
+  $('#display-all-bikes-message').html('Bike deleted')
   $('#display-all-bikes-message').css('color', 'green')
-
-  // indexBikesSuccess(data)
+  $('#delete-bike-form').trigger('reset')
 }
 
 const deleteBikeFailure = function (data) {
-  store.bikes = data.bikes
+  store.bike = data.bike
   $('#display-all-bikes-message').html('Unable to delete bike')
   $('#display-all-bikes-message').css('color', 'red')
+  // $('#display-delete-bike-message').html('Unable to delete bike')
+  // $('#display-delete-bike-message').css('color', 'red')
+  $('#delete-bike-form').trigger('reset')
 }
 
 module.exports = {

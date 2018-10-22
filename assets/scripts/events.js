@@ -20,7 +20,6 @@ const onShowBike = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-  // console.log(`events onShowBike data is = ${data}`)
 
   api.showBike(data)
     .then(ui.showBikeSuccess)
@@ -32,9 +31,6 @@ const onCreateBike = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-  // console.log(`events onCreateBike data is = ${data}`)
-  // console.log(`events onCreateBike data.bike.style is = ${data.bike.style}`)
-  // console.log(`events onCreateBike data.bike.size is = ${data.bike.size}`)
 
   api.createBike(data)
     .then(ui.createBikeSuccess)
@@ -46,10 +42,6 @@ const onUpdateBike = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-  // console.log(`events onUpdateBike data is = ${data}`)
-  // console.log(`events onUpdateBike data.bike.id is = ${data.bike.id}`)
-  // console.log(`events onUpdateBike data.bike.style is = ${data.bike.style}`)
-  // console.log(`events onUpdateBike data.bike.size is = ${data.bike.size}`)
 
   api.updateBike(data)
     .then(ui.updateBikeSuccess)
@@ -61,10 +53,20 @@ const onDeleteBike = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
+
+  // api.showBike(data)
+  //   .then(ui.showBikeSuccess)
+  //   .catch(ui.showBikeFailure)
+
   // console.log(`events onDeleteBike data is = ${data}`)
   // console.log(`events onDeleteBike data.bike.id is = ${data.bike.id}`)
+  // console.log(`events onDeleteBike data.bike.style is = ${data.bike.style}`)
+  // console.log(`events onDeleteBike data.bike.size is = ${data.bike.size}`)
+  // console.log(`events onDeleteBike data.bike.user_id is = ${data.bike.user_id}`)
 
   if (confirm('Are you sure you want to delete this bike?')) {
+    // ui.deleteBikeSuccess(data)
+    // ui.deleteBikeFailure(data)
     api.deleteBike(data)
       .then(ui.deleteBikeSuccess)
       .catch(ui.deleteBikeFailure)

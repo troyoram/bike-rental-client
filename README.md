@@ -7,7 +7,7 @@ to authenticate through sign-up, sign-in, change-password, and sign-out using
 a custom API.  Once signed in, users can create, read, update, and delete bikes
 in a SQL database for others to potentially rent.
 
-[Requirements](https://git.generalassemb.ly/ga-wdi-boston/full-stack-project/blob/master/requirements.md)
+[Requirements](https://git.generalassemb.ly/ga-wdi-boston/full-stack-project/)
 
 [Bike Rental Client - Repo](https://github.com/troyoram/bike-rental-client)
 
@@ -21,7 +21,8 @@ in a SQL database for others to potentially rent.
 
 Although there are many companies that rent their own bikes, I would like to
 create an appliction where any individual or Local Bike Shop (LBS) can post
-bikes for rent all located in one repository.
+bikes for rent all located in one repository.  Think of AirBnB, but for bike
+rentals.
 
 The Bike Rental Client provides the user interface where new users can sign up
 and existing users can sign-in, change-password, and sign-out.  Signed in users

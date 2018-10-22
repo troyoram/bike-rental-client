@@ -16,7 +16,6 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  // console.log(store.user)
   $('#display-message').html('Signed In As: ' + store.user.email + ', User ID: ' + store.user.id)
   $('#display-message').css('color', 'green')
   $('#sign-in-form').trigger('reset')
@@ -44,7 +43,6 @@ const signOutSuccess = function () {
   $('#sign-in-form').removeClass('hidden')
   $('#change-password-form').addClass('hidden')
   $('#sign-out-button').addClass('hidden')
-  $('#game-board').addClass('hidden')
 }
 
 const changePasswordSuccess = function () {

@@ -22,6 +22,10 @@ button {
   display: flex;
 }
 
+.message {
+  display: inline-block;
+}
+
 .box {
   align-items: center;
   border: 1px solid $white;
