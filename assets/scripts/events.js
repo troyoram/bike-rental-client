@@ -16,7 +16,6 @@ const onIndexBikes = function (event) {
 }
 
 const onShowBike = function (event) {
-  // prevent auto-page refresh
   event.preventDefault()
 
   const data = getFormFields(event.target)
@@ -27,7 +26,6 @@ const onShowBike = function (event) {
 }
 
 const onCreateBike = function (event) {
-  // prevent auto-page refresh
   event.preventDefault()
 
   const data = getFormFields(event.target)
@@ -38,7 +36,6 @@ const onCreateBike = function (event) {
 }
 
 const onUpdateBike = function (event) {
-  // prevent auto-page refresh
   event.preventDefault()
 
   const data = getFormFields(event.target)
@@ -49,24 +46,11 @@ const onUpdateBike = function (event) {
 }
 
 const onDeleteBike = function (event) {
-  // prevent auto-page refresh
   event.preventDefault()
 
   const data = getFormFields(event.target)
 
-  // api.showBike(data)
-  //   .then(ui.showBikeSuccess)
-  //   .catch(ui.showBikeFailure)
-
-  // console.log(`events onDeleteBike data is = ${data}`)
-  // console.log(`events onDeleteBike data.bike.id is = ${data.bike.id}`)
-  // console.log(`events onDeleteBike data.bike.style is = ${data.bike.style}`)
-  // console.log(`events onDeleteBike data.bike.size is = ${data.bike.size}`)
-  // console.log(`events onDeleteBike data.bike.user_id is = ${data.bike.user_id}`)
-
   if (confirm('Are you sure you want to delete this bike?')) {
-    // ui.deleteBikeSuccess(data)
-    // ui.deleteBikeFailure(data)
     api.deleteBike(data)
       .then(ui.deleteBikeSuccess)
       .catch(ui.deleteBikeFailure)

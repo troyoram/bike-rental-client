@@ -1,11 +1,14 @@
 # Bike Rental Application - Full Stack Project
 
-The Ben Lomond Bike Rental appliction is the second project assigned to students
+The Ben Lomond Bike Rental application is the second project assigned to students
 in General Assembly's Web Development Immersive (WDI) Course.  The student is
 tasked with building a Single Page Application (SPA).  Users will be required
 to authenticate through sign-up, sign-in, change-password, and sign-out using
-a custom API.  Once signed in, users can create, read, update, and delete bikes
-in a SQL database for others to potentially rent.
+a custom Application Programming Interface (API).  Once signed in, users can
+create, read, update, and delete bikes in an SQL database for others to
+potentially rent.
+
+## Project Links
 
 [Requirements](https://git.generalassemb.ly/ga-wdi-boston/full-stack-project/)
 
@@ -15,21 +18,21 @@ in a SQL database for others to potentially rent.
 
 [Bike Rental Server - Repo](https://github.com/troyoram/bike-rental-server)
 
-[Bike Bike Rental Server - Deployed](https://bike-rental-server.herokuapp.com/bikes)
+[Bike Rental Server - Deployed](https://bike-rental-server.herokuapp.com/bikes)
 
 ## Description
 
 Although there are many companies that rent their own bikes, I would like to
-create an appliction where any individual or Local Bike Shop (LBS) can post
-bikes for rent all located in one repository.  Think of AirBnB, but for bike
+create an application where any individual or Local Bike Shop (LBS) can post
+bikes for rent in one central repository.  Think of AirBnB, but for bike
 rentals.
 
 The Bike Rental Client provides the user interface where new users can sign up
 and existing users can sign-in, change-password, and sign-out.  Signed in users
 can use buttons and forms to view bikes from all users or create, update, and
-delete therr own bikes.  The Bike Rental Client is deployed using Git Hub Pages.
+delete their own bikes.  The Bike Rental Client is deployed using Git Hub Pages.
 
-The Bike Rental Server is the back-end API that responds to, and processes,
+The Bike Rental Server is the back-end API that responds to, and processes
 requests from the client.  The Bike Rental Server is deployed on heroku.
 
 ## User Stories
@@ -73,10 +76,10 @@ delete '/bikes/:id' => 'bikes#delete'
 
 ## Technologies Used
 
-1. Browser: Google Chrome with DevTools
-1. Editor: Atom
-1. Client-side tools: HTML, CSS, Javascript, , bootstrap, Node Package Manager
-1. Server-side tools: Ruby, Rails
+1. *Browser:* Google Chrome with DevTools
+1. *Editor:* Atom
+1. *Client-side tools:* HTML, CSS, Javascript, JQuery, AJAX, JSON, bootstrap, Node Package Manager, curl-scripts
+1. *Server-side tools:* Ruby, Rails, JSON, curl-scripts
 
 ## Schedule
 
@@ -167,7 +170,7 @@ Please read [CONTRIBUTING.md](https://github.com/troyoram/bike-rental-client/blo
 ## Versioning
 
 'git commit' and 'git push' were used for versioning. For the versions available,
-see the repo links above.
+see the Project Links above.
 
 ## Authors
 

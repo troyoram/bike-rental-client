@@ -4,7 +4,7 @@ const store = require('./store.js')
 
 const indexBikesSuccess = function (data) {
   store.bikes = data.bikes
-
+  // create bike table header row display
   let newHTML = ''
   newHTML += '<div class="row">'
   newHTML += '<div class="col box grey">Bike ID</div>'
@@ -12,7 +12,7 @@ const indexBikesSuccess = function (data) {
   newHTML += '<div class="col box grey">Size</div>'
   newHTML += '<div class="col box grey">User ID</div>'
   newHTML += '</div>'
-
+  // populate each row of bike table display
   for (let i = 0; i < store.bikes.length; i++) {
     newHTML += '<div class="row">'
     newHTML += '<div class="col box grey"><ul><h4>' + store.bikes[i].id + '</h4></ul></div>'
@@ -32,7 +32,7 @@ const indexBikesFailure = function (data) {
 
 const showBikeSuccess = function (data) {
   store.bike = data.bike
-
+  // display bike table header row and one populated bike row
   let newHTML = ''
   newHTML += '<div class="row">'
   newHTML += '<div class="col box grey">Bike ID</div>'
@@ -46,7 +46,6 @@ const showBikeSuccess = function (data) {
   newHTML += '<div class="col box grey"><ul><h4>' + data.bike.size + '</h4></ul></div>'
   newHTML += '<div class="col box grey"><ul><h4>' + data.bike.user_id + '</h4></ul></div>'
   newHTML += '</div>'
-
   $('#display-all-bikes-message').html(newHTML)
   $('#show-bike-form').trigger('reset')
 }
@@ -73,8 +72,6 @@ const createBikeFailure = function (data) {
 
 const updateBikeSuccess = function (data) {
   store.bike = data.bike
-  $('#display-update-bike-message').html('Bike updated')
-  $('#display-update-bike-message').css('color', 'green')
   $('#update-bike-form').trigger('reset')
   showBikeSuccess(data)
 }
@@ -87,8 +84,6 @@ const updateBikeFailure = function (data) {
 }
 
 const deleteBikeSuccess = function (data) {
-  // $('#display-delete-bike-message').html('Bike deleted')
-  // $('#display-delete-bike-message').css('color', 'green')
   $('#display-all-bikes-message').html('Bike deleted')
   $('#display-all-bikes-message').css('color', 'green')
   $('#delete-bike-form').trigger('reset')
@@ -98,8 +93,6 @@ const deleteBikeFailure = function (data) {
   store.bike = data.bike
   $('#display-all-bikes-message').html('Unable to delete bike')
   $('#display-all-bikes-message').css('color', 'red')
-  // $('#display-delete-bike-message').html('Unable to delete bike')
-  // $('#display-delete-bike-message').css('color', 'red')
   $('#delete-bike-form').trigger('reset')
 }
 
