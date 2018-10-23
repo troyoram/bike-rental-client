@@ -24,6 +24,12 @@ button {
   display: inline-block;
 }
 
+.page-title {
+  font-family: fantasy;
+  font-size: 70px;
+  padding: 40px 20px 0px 20px;
+}
+
 .box {
   align-items: center;
   border: 1px solid $white;
