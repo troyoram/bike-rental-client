@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>BLBR</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
+      <link rel="shortcut icon" type="image/x-icon" href="public/bike-icon.png">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body class="bg">
+      <h1 class="page-title">Ben Lomond Bike Rental</h1>
+
+      <h3 id="display-message"></h3>
+      <h3 id="display-sign-up-message"></h3>
+      <form id="sign-up-form">
+        <!-- <legend>Sign Up!</legend> -->
+        <input required placeholder="Enter email" name="credentials[email]" type="email"/>
+        <input required placeholder="Enter password" name="credentials[password]" type="password"/>
+        <input required placeholder="Confirm password" name="credentials[password_confirmation]" type="password"/>
+        <input type="submit" class="btn btn-primary btn-sm" value="Sign Up"/>
+      </form>
+
+      <h3 id="display-sign-in-message"></h3>
+      <form id="sign-in-form">
+        <!-- <legend>Sign In!</legend> -->
+        <input required placeholder="Enter email" name="credentials[email]" type="email"/>
+        <input required placeholder="Enter password" name="credentials[password]" type="password"/>
+        <input type="submit" class="btn btn-primary btn-sm" value="Sign In"/>
+      </form>
+
+      <h3 id="display-change-password-message"></h3>
+      <form id="change-password-form" class="hidden">
+        <!-- <legend>Change Password!</legend> -->
+        <input required placeholder="Enter old password" name="passwords[old]" type="password"/>
+        <input required placeholder="Enter new password" name="passwords[new]" type="password"/>
+        <input type="submit" class="btn btn-primary btn-sm" value="Change Password"/>
+      </form>
+
+      <h3 id="display-sign-out-message"></h3>
+      <form id="sign-out-button" class="hidden">
+        <input type="submit" class="btn btn-primary btn-sm" value="Sign Out"/>
+      </form>
+
+      <br>
+      <!-- <button type="button" class="btn btn-primary">Primary</button> -->
+
+      <button id="indexBikes" class="hidden btn btn-primary btn-sm" type="button">List All Bikes</button>
+
+      <h3 id="display-show-bike-message"></h3>
+      <form id="show-bike-form" class="hidden">
+        <!-- <legend>Show Bike</legend> -->
+        <input required placeholder="Enter Bike ID Number" name="bike[id]" type="number"/>
+        <input type="submit" class="btn btn-primary btn-sm" value="Show Bike"/>
+      </form>
+
+      <h3 id="display-create-bike-message"></h3>
+      <form id="create-bike-form" class="hidden">
+        <!-- <legend>Create Bike</legend> -->
+        <input required placeholder="Enter Style" name="bike[style]" type="text"/>
+        <input required placeholder="Enter Size" name="bike[size]" type="text"/>
+        <input type="submit" class="btn btn-primary btn-sm" value="Create Bike"/>
+      </form>
+
+      <h3 id="display-update-bike-message"></h3>
+      <form id="update-bike-form" class="hidden">
+        <!-- <legend>Update Bike</legend> -->
+        <input required placeholder="Enter Bike ID Number" name="bike[id]" type="number"/>
+        <input required placeholder="Enter Style" name="bike[style]" type="text"/>
+        <input required placeholder="Enter Size" name="bike[size]" type="text"/>
+        <input type="submit" class="btn btn-primary btn-sm" value="Update Bike"/>
+      </form>
+
+      <h3 id="display-delete-bike-message"></h3>
+      <form id="delete-bike-form" class="hidden">
+        <!-- <legend>Delete Bike</legend> -->
+        <input required placeholder="Enter Bike ID Number" name="bike[id]" type="number"/>
+        <input type="submit" class="btn btn-primary btn-sm" value="Delete Bike"/>
+      </form>
+
+      <br>
+
+      <h3 id="display-all-bikes-message"></h3>
+
+    </body>
+</html>
